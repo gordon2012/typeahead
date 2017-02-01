@@ -12,6 +12,17 @@ fetch(endpoint)
 document.querySelector('.search-form').addEventListener('submit', e => e.preventDefault());
 document.querySelector('.search').addEventListener('keyup', typeAhead);
 
+function addCommas(num) {
+    const arr = num.toString().split('');
+    const newarr = [];
+
+    for(let i = arr.length-1; i >= 0; i--) {
+        newarr.unshift(arr[i]);
+        if ((arr.length-i) % 3 == 0 && i > 0) newarr.unshift(',');
+    }
+    return newarr.join('');
+}
+
 function typeAhead(e) {
     const term = this.value;
 
@@ -23,12 +34,12 @@ function typeAhead(e) {
                 const reg = new RegExp(`(${term})`, 'gi');
                 const newtext = text.replace(reg, `<span class="hl">$1</span>`);
 
-                return `<li>${newtext}: ${c.population}</li>`
+                return `<li><span>${newtext}</span><span class="population">${addCommas(c.population)}</span></li>`
             })
             .join('')
     :
         `
-        <li>filter by city</li>
-        <li>or state</li>
+        <li>Filter by City</li>
+        <li>or State</li>
         `;
 }

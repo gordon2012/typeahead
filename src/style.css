@@ -1,18 +1,22 @@
-body {
-    margin: 0;
-}
-
-body {
-    background: orange;
+html {
+    background: #ffc600;
+    font-size: 20px;
 }
 
 form {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 input {
-    width: 100%;
+    width: auto;
+    padding: 16px;
+    text-align: center;
+    font-size: 1.3em;
+    border: 10px solid #eee;
 }
 
 .suggestions {
@@ -24,9 +28,19 @@ input {
 }
 
 li {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
+    background: #eee;
     width: 80%;
     margin: 0 auto;
+    padding: 8px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+span.population {
+    /*float: right;*/
+    font-size: 0.9em;
 }
 
 h1 {
