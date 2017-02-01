@@ -17,14 +17,14 @@ Return
     FoundPos := RegExMatch(Clipboard, "(.* )([#]\d*)", SP)
     Clipboard = git commit -m "%SP1%(Closes %SP2%)"
 
-    WinActivate, MINGW32:/c/Users/Gordon/Projects/typeahead
+    WinActivate, MINGW64:/c/Users/Gordon/Projects/typeahead
 
     SendRaw, %Clipboard%
 
 Return
 
 !w::
-    WinActivate, MINGW32:/c/Users/Gordon/Projects/typeahead
+    WinActivate, MINGW64:/c/Users/Gordon/Projects/typeahead
     SendRaw, git commit --amend --no-edit --date=""
 Return
 
@@ -36,6 +36,6 @@ Return
     
     Clipboard = git checkout -b %OutText%
 
-    WinActivate, MINGW32:/c/Users/Gordon/Projects/typeahead
+    WinActivate, MINGW64:/c/Users/Gordon/Projects/typeahead
     SendRaw, %Clipboard%
 Return
